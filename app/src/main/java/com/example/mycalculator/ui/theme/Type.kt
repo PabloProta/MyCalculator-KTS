@@ -1,8 +1,3 @@
-/*
- * Copyright (C) 2023 Motorola Mobility LLC.
- * All Rights Reserved.
- * Motorola Mobility Confidential Restricted.
- */
 package com.example.mycalculator.ui.theme
 
 import androidx.compose.material3.Typography
