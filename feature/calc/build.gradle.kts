@@ -6,5 +6,5 @@ android {
 }
 
 dependencies {
-
+    implementation(projects.feature.home)
 }
