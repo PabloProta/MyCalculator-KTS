@@ -15,9 +15,10 @@ VersionsCatalogs |[here](https://docs.gradle.org/current/userguide/platforms.htm
 
 ACTION  | TIME:
 --------- | ---------
-Invalidate Cache | 
-Clean Build | 
-Rebuild Project |
+Invalidate Cache | 6m:19s:28ms
+Clean Build | 41s:69ms
+Rebuild Project | 1m:32s:56ms
+install apk | 59s:63m
 
 ### App appearance (I know it's not beautiful haha)🤡:
 
