@@ -3,11 +3,12 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+
 android {
-    compileSdk = 33
+    compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
-        minSdk = 24
+        minSdk = Versions.MIN_SDK
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -23,11 +24,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = Versions.javaCompileVersion
+        targetCompatibility = Versions.javaCompileVersion
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 
     packagingOptions {
@@ -38,7 +39,13 @@ android {
     }
 }
 
-val libs = the<VersionCatalogsExtension>().named("libs")
+/**
+ * This can't be `private`. the dependencies scope will doesn't reach the libs variable in compile-
+ * time.
+ */
+val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
+
 dependencies {
     testImplementation(libs.findLibrary("junit").get())
     androidTestImplementation(libs.findBundle("androidx.tests").get())

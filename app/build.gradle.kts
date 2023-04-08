@@ -52,5 +52,6 @@ android {
 dependencies {
     implementation(projects.feature.home)
     implementation(projects.feature.calc)
+    implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose.ui.kit)
 }
