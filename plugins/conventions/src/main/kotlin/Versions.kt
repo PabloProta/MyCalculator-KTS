@@ -4,5 +4,5 @@ object Versions {
     const val COMPILE_SDK = 33
     const val MIN_SDK = 24
 
-    val javaCompileVersion = JavaVersion.VERSION_11
+    val javaCompileVersion = JavaVersion.VERSION_1_8
 }

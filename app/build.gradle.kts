@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.hilt)
+    kotlin("kapt")
 }
 
 android {
@@ -26,8 +28,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -54,4 +56,10 @@ dependencies {
     implementation(projects.feature.calc)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose.ui.kit)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
+
+}
+kapt {
+    correctErrorTypes = true
 }

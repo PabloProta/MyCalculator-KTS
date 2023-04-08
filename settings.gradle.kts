@@ -23,6 +23,8 @@ include(":app")
 include(":feature:home")
 include(":feature:calc")
 
+
+rootProject.name = "MyCalculator"
 /**
  * https://docs.gradle.org/7.0/release-notes.html
  *

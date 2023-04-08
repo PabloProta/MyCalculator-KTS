@@ -1,8 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
 }
-
 
 android {
     compileSdk = Versions.COMPILE_SDK
@@ -49,4 +49,8 @@ val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().name
 dependencies {
     testImplementation(libs.findLibrary("junit").get())
     androidTestImplementation(libs.findBundle("androidx.tests").get())
+}
+
+kapt {
+    correctErrorTypes = true
 }
